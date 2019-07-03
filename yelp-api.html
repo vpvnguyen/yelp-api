@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yelp API Sample</title>
+</head>
+<body>
+    <script>
+        var searchQuery = $(this).attr('data-name'); 
+  console.log(`Search Query: ${searchQuery}`);
+
+  var apiKey = 'FYvzSNBBiaOqf3rAD8ALeaoV0S69Qi29';
+  var apiRoute = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchQuery}&limit=30&offset=0&rating=G&lang=en`;
+
+  // async get method; call giphy api
+  $.get({
+    url: apiRoute
+  }).done(function(response) {
+      console.log(response)
+  });
+    </script>
+</body>
+</html>
